@@ -1,0 +1,22 @@
+Test cases for backend:
+
+# /
+curl -i -H "Content-Type":application/json http://localhost:8080
+
+# /users/register
+curl -i -X POST -d '{"username": "AzureDiamond",  "password": "hunter2",  "fullname": "Joey Pardella",  "age": 15}' http://localhost:8080/users/register -H "Content-Type":application/json
+
+# /users/authenticate
+curl -i -X POST -d '{"username": "AzureDiamond",  "password": "hunter2"}' http://localhost:8080/users/authenticate -H "Content-Type":application/json
+
+# /users/expire
+curl -i -X POST -d '{"token": ""5fc077b2-cc5d-40b3-8d6d-ac3395e35d0e}' http://localhost:8080/users/expire -H "Content-Type":application/json
+
+# /diary/create
+curl -i -X POST -d '{"token": "bf6e751d-6b06-428f-8919-01fbd814b6d1","title": "No One Can See This Post","public": false, "text": "It is very secret!"}' http://localhost:8080/diary/create -H "Content-Type":application/json
+
+# /diary/delete
+curl -i -X POST -d '{"token": "bf6e751d-6b06-428f-8919-01fbd814b6d1","id": 6}' -H "Content-Type":application/json http://localhost:8080/diary/delete
+
+# /diary/permission
+curl -i -X POST -d '{"token": "bf6e751d-6b06-428f-8919-01fbd814b6d1","id": 5, "private": true}' -H "Content-Type":application/json http://localhost:8080/diary/permission

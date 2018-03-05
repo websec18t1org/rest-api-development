@@ -1,0 +1,31 @@
+#check the container id
+sudo docker ps 
+#get root shell on docker container
+sudo docker exec -it ID /bin/bash
+
+
+
+===================================
+GIT 
+
+1. quick guide http://rogerdudler.github.io/git-guide/.
+
+
+
+To start working on the project
+
+0. Accept the collaborator email.
+
+1. grab a copy of the depository - git clone https://github.com/websec18t1/wsassignment
+
+2. update your local copy of the depostory - git pull
+
+3. show what changes you have made - git status
+
+4. add file to depository - add filename
+
+5. commit and update remote depository- 
+
+git commit -m "commit msg"
+
+git push

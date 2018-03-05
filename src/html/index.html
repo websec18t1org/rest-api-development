@@ -1,26 +1,65 @@
 <html>
-    <head>
-    </head>
-    <body>
-        <h1>Secret Diary Front End</h1>
-        <p>Requirements for the front end are as follows:</p>
-        <ul>
-            <li>Register a user</li>
-            <li>Login</li>
-            <li>Logout</li>
-            <li>Display all public diary entries</li>
-            <li>Display an authenticated user's diary entries</li>
-            <li>Create a new diary entry</li>
-            <li>Delete an existing diary entry</li>
-            <li>Toggle the permissions on an existing diary entry</li>
-        </ul>
-        <!-- the following is a demo on how you may display data retrieved from
-             the API
-        -->
-        <div id="demo_heartbeat">
-        </div>
-        <div id="demo_members">
-        </div>
-        <script src="./demo.js"></script>
-    </body>
+<head>
+   <title>Team 1 Secret Diary</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<table align="right">
+<tr>
+   <td>
+      <center><h2>Register new user</h2></center>
+      <form id="registerform">
+      <div><label for="name">Username:</label><input type="text" id="username" name="username" required><br>
+      </div>
+      <div><label for="password">Password:</label><input type="password" id="password" name="password" required><br>
+      </div>
+      <div><label for="fullname">Full name:</label><input type="text" id="fullname" name="fullname" required><br>
+      </div>
+      <div><label for="age">Age:</label><input type="number" id="age" name="age" required><br>
+      </div>
+      <div class="button"><button type="submit" value="Submit">Register</button>
+      </div>
+      </form>
+      <div id="register_results">
+      </div>
+      <br><br>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><h2>Login existing user</h2></center>
+      <form id="loginform">
+      <div><label for="name">Username:</label><input type="text" id="name" name="username" required><br>
+      </div>
+      <div><label for="password">Password:</label><input type="password" id="password" name="password" required><br>
+      </div>
+      <div class="button"><button type="submit" value="Submit">Login</button>
+      </div>
+      </form>
+      <div id="login_results">
+      </div>
+      <br><br>
+   </td>
+</tr>
+</table>
+
+<h1>Welcome to Team 1 Secret Diary Front End</h1>
+
+<h2>Public Diary Entries</h2>
+
+<div id="listpublicentries">
+</div>
+
+<div class="footer">
+   <p><div id="demo_heartbeat"></div><div id="demo_members"></div></p>
+</div>
+
+<script src="./jquery-latest.min.js"></script>
+<script src="./jquery.serializejson.js"></script>
+<script src="./main.js"></script>
+<script src="./meta.js"></script>
+
+</body>
 </html>

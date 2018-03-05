@@ -15,33 +15,36 @@ function ajax_get(url, callback) {
             }
             callback(data);
         }
+
     };
 
     xmlhttp.open("GET", url, true);
+    xmlhttp.setRequestHeader("Content-type", "application/json");
     xmlhttp.send();
+
 }
 
 ajax_get(API_ENDPOINT + '/meta/heartbeat', function(data) {
 	if (data.status) {
-		document.getElementById("demo_heartbeat").innerHTML = "Heartbeat success";
+		document.getElementById("demo_heartbeat").innerHTML = "Server status: Heartbeat success";
 	}
 	else {
-		document.getElementById("demo_heartbeat").innerHTML = "Heartbeat failed";
+		document.getElementById("demo_heartbeat").innerHTML = "Server status: Heartbeat failed";
 	}
+
 });
 
 ajax_get(API_ENDPOINT + '/meta/members', function(data) {
 	if (data.status) {
         var members = data.result;
-        var output = "<p>Team Members:</p><ul>";
-        for (var i = 0; i < members.length; i++) {
-            output += "<li>" + members[i] + "</li>";
+        var output = "Team Members: " + members[0];
+        for (var i = 1; i < members.length; i++) {
+            output += " | " + members[i];
         }
-        output += "</ul>";
 		document.getElementById("demo_members").innerHTML = output;
 	}
 	else {
 		document.getElementById("demo_members").innerHTML = "Members failed";
 	}
-});
 
+});

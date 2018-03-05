@@ -88,7 +88,21 @@ If a response is received, you're good to go.
 Please replace the example screenshots with screenshots of your completed
 project. Feel free to include more than one.
 
-![Sample Screenshot](./img/samplescreenshot.png)
+**1. Main Page with Public Entries**
+
+![Main Page with Public Entries](./img/main.png)
+
+**2. Authenticated User Page**
+
+![Authenticated User Page](./img/authenticated_user.png)
+
+**3. Private Diary Entry**
+
+![Private Diary Entry](./img/private_entry.png)
+
+**4. Mark Private Entry Public**
+
+![Mark Private Entry Public](./img/public_entry.png)
 
 ## Administration and Evaluation
 
@@ -96,48 +110,66 @@ Please fill out this section with details relevant to your team.
 
 ### Team Members
 
-1. Member 1 Name
-2. Member 2 Name
-3. Member 3 Name
-4. Member 4 Name
+1. Tan Chee Chun
+2. Loh Jing Lun
+3. Kwek Xianzhi
+4. Xie Yaocong Gilbert
 
 ### Short Answer Questions
 
 #### Question 1: Briefly describe the web technology stack used in your implementation.
 
-Answer: Please replace this sentence with your answer.
+Answer: SQlite for database. Python Flask for backend. Html and Javascript for front end.
 
 #### Question 2: Are there any security considerations your team thought about?
 
-Answer: Please replace this sentence with your answer.
+Answer: 
+
+1. Usage of HTTP. Traffic is unencrypted and third party can sniff it and even modify it. No data authenticity and integrity...  
+2. Password is sent in clear when submitting forms
+3. User input in authentication form fields are not sanitized.
 
 #### Question 3: Are there any improvements you would make to the API specification to improve the security of the web application?
 
-Answer: Please replace this sentence with your answer.
+Answer: 
+1. We do not assemble sql query string using Python’s string operations because it is vulnerable to an SQL injection attack. Instead, we use the DB-API’s parameter substitution.
 
 #### Question 4: Are there any additional features you would like to highlight?
 
-Answer: Please replace this sentence with your answer.
+Answer:
+1. We note that CORS is explictly enabled inside app.py to overcome Same Origin Policy (SOP) restriction, where API requests from http://localhost:80 to http://localhost:8080 may be prevented from running.
 
 #### Question 5: Is your web application vulnerable? If yes, how and why? If not, what measures did you take to secure it?
 
-Answer: Please replace this sentence with your answer.
+Answer:
+1. The json web service on port 8080 might be vulnerable as there are no authentication measures in place to verify the authenticity of the POST and GET messages it receives.
+
+2. The messages are also sent in clear without any encryption, which means senstive information like password or secret diary post can still be seen.
 
 #### Feedback: Is there any other feedback you would like to give?
 
-Answer: Please replace this sentence with your answer.
+Answer:
+1. Always ensure the security principles of Confidentiality, Integrity and Availability are followed when developing a web application.
 
 ### Declaration
 
 #### Please declare your individual contributions to the assignment:
 
-1. Member 1 Name
-    - Integrated feature x into component y
-    - Implemented z
-2. Member 2 Name
-    - Wrote the front-end code
-3. Member 3 Name
-    - Designed the database schema
-4. Member 4 Name
-    - Implemented x
+1. Tan Chee Chun
+	- Develop Back-end Server API
+	- Design and implement Web frontend 
+	- Answer Short question
+2. Loh Jing Lun
+	- Develop Back-end Server API
+	- Design and implement Web frontend 
+	- Answer Short question
+3. Kwek Xianzhi
+	- Develop Back-end Server API
+	- Design and implement Web frontend 
+	- Answer Short question
+4. Xie Yaocong Gilbert
+	- Develop Back-end Server API
+	- Design and implement Web frontend 
+	- Answer Short question
+
 

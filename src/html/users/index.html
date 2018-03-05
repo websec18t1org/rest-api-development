@@ -1,0 +1,66 @@
+<html>
+<head>
+   <title>Welcome to Authenticated User page</title>
+   <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<table align="right">
+<tr>
+   <td>
+      <form id="viewdiaryform">
+      <button id='1' onclick=getowndiaryfunction()>View My Diary</button>
+      </form>
+   </td>
+</tr>
+<tr>
+   <td>
+      <form id="logoutform">
+      <button id='2' type="submit" value="Submit">Logout (expire token)</button>
+      </form>
+      <div id="logout_results">
+      </div>
+      <br><br>
+   </td>
+</tr>
+<tr>
+   <td>
+      <h2>Create Diary Post</h2>
+      <form id="creatediaryform">
+      Title:<br>
+      <textarea rows="1" name="title" form="creatediaryform"></textarea><br><br>
+      Text:<br>
+      <textarea rows="4" name="text" form="creatediaryform"></textarea><br><br>
+      <div><label for="public">Public Post</label><input style="width:20px" type="checkbox" id="public" name="public"><br>
+      </div>
+      <div class="button"><button type="submit" value="Submit">Create Post</button>
+      </div>
+      </form>
+      <div id="creatediary_results">
+      </div>
+   </td>
+</tr>
+</table>
+
+<h1>Welcome to Authenticated User Page</h1>
+
+<div id="authenticate_results">
+</div>
+
+<h2>My Diary Entries</h2>
+
+<div id="viewdiary_results">
+</div>
+
+<div class="footer">
+   <p><div id="demo_heartbeat"></div><div id="demo_members"></div></p>
+</div>
+
+<script src="../js.cookie-2.2.0.min.js"></script>
+<script src="../jquery-latest.min.js"></script>
+<script src="../jquery.serializejson.js"></script>
+<script src="../meta.js"></script>
+<script src="../user.js"></script>
+
+</body>
+</html>
